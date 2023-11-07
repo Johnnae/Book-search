@@ -1,12 +1,12 @@
 // This is defining the queries that can be performed on your API. In this case, there are three queries: users, user, and me. The users query returns an array of User objects, the user query returns a single User object based on the provided username, and the me query returns the User object of the currently authenticated user.
 
-const typeDefs = 
-type Query = {
+const typeDefs = `
+type Query  {
     users: [User]
     user(username: String!): User
     me: User
   }
-type User = { 
+type User  { 
     _id: ID
     username: String
     email: String
