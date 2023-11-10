@@ -1,14 +1,23 @@
 import './App.css';
 import { Outlet } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'; 
+import React from 'react';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+// Create an Apollo Client
+const client = new ApolloClient({
+  uri: 'http://localhost:3000', 
+  cache: new InMemoryCache()
+});
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
+    <ApolloProvider client={client}>
+      <div className="flex-column justify-center align-center min-100-vh bg-primary"> 
+        <Navbar /> 
+        <Outlet />
+      </div>
+    </ApolloProvider>
   );
 }
 
