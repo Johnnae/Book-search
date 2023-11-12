@@ -35,24 +35,24 @@ const resolvers = {
 
       return { token, user };
     },
-    addUser: async (parent, { userText }, context) => {
-      if (context.user) {
-        const user = await User.create({
-          userText,
-          userAuthor: context.user.username,
-        });
+    // addUser: async (parent, { userText }, context) => {
+    //   if (context.user) {
+    //     const user = await User.create({
+    //       userText,
+    //       userAuthor: context.user.username,
+    //     });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { users: user._id } }
-        );
+    //     await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $addToSet: { users: user._id } }
+    //     );
 
-        return user;
-      }
-      throw AuthenticationError;
-      ("You need to be logged in!");
-    },
-    addBook: async (parent, { userId, bookText }, context) => {
+    //     return user;
+    //   }
+    //   throw AuthenticationError;
+    //   ("You need to be logged in!");
+    // },
+    saveBook: async (parent, { userId, bookText }, context) => {
       if (context.user) {
         return user.findOneAndUpdate(
           { _id: userId },
