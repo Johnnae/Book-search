@@ -39,7 +39,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 
 ### Links 
-https://git.heroku.com/safe-crag-07245.git 
+https://git.heroku.com/safe-crag-07245.git     
 
 https://github.com/Johnnae/Book-search.git  
 
